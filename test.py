@@ -128,15 +128,15 @@ class miniModel():
 
     # backward_propagation
     def backward_propagation(self, X, y_true, params, forward_cache):
-        m = X.shape[0]
+        m = X.shape[0] # m = 64
         
-        dz2 = forward_cache["a2"] - y_true                   # (m, 10)
-        dW2 = np.dot(forward_cache["a1"].T, dz2) / m         # (128, 10)
-        db2 = np.sum(dz2, axis=0, keepdims=True) / m                        # (10,)
+        dz2 = forward_cache["a2"] - y_true   # (m, 10)
+        dW2 = np.dot(forward_cache["a1"].T, dz2) / m  # (128, 10)
+        db2 = np.sum(dz2, axis=0, keepdims=True) / m  # (10,)
         
         dz1 = np.dot(dz2, params["W2"]) * (forward_cache["z1"] > 0)  # (m, 128)
-        dW1 = np.dot(X.T, dz1) / m                           # (784, 128)
-        db1 = np.sum(dz1, axis=0, keepdims=True) / m                        # (128,)
+        dW1 = np.dot(X.T, dz1) / m   # (784, 128)
+        db1 = np.sum(dz1, axis=0, keepdims=True) / m  # (128,)
         
         return {"dW1": dW1.T, "db1": db1, "dW2": dW2.T, "db2": db2}
 
@@ -149,10 +149,11 @@ class miniModel():
 
     def train(self, X, y, params, epochs=10, batch_size=64, learning_rate=0.01):
         for epoch in range(epochs):
-            permutation = np.random.permutation(X.shape[0])
-            X_shuffled = X[permutation]
+            permutation = np.random.permutation(X.shape[0]) 
+            X_shuffled = X[permutation] # shuffling test images from the dataset
             y_shuffled = y[permutation]
             
+            # 1. Mini batch Stochastic gradient descent (fast)
             for i in range(0, X.shape[0], batch_size):
                 X_batch = X_shuffled[i:i+batch_size]
                 y_batch = y_shuffled[i:i+batch_size]
@@ -160,6 +161,11 @@ class miniModel():
                 cache = self.forward_propagation(X_batch, params)
                 grads = self.backward_propagation(X_batch, y_batch, params, cache)
                 params = self.update_parameters(params, grads, learning_rate)
+            
+            # 2. Stochastic gradient descent (slow, more accurate)
+            # cache = self.forward_propagation(X_shuffled, params)
+            # grads = self.backward_propagation(X_shuffled, y_shuffled, params, cache)
+            # params = self.update_parameters(params, grads, learning_rate)
             
             cache = self.forward_propagation(X, params)
             loss = self.compute_loss(y, cache["a2"])
@@ -174,6 +180,7 @@ class miniModel():
         predictions = np.argmax(cache["a2"], axis=1)
         accuracy = np.mean(predictions == np.argmax(y_test, axis=1))
         print(f"Test Accuracy: {accuracy * 100:.2f}%")
+    
 
 
 input_path = 'data'
