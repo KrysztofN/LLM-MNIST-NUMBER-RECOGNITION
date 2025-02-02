@@ -170,16 +170,16 @@ class miniModel():
 
         plt.tight_layout()
         plt.savefig('charts/loss_accuracy.png')
-
-
+    
     def train(self, X, y, params, epochs=10, batch_size=64, learning_rate=0.01):
         loss_accuracy_history = []
+        params_history = []  # Track parameter history
+        
         for epoch in range(epochs):
-            permutation = np.random.permutation(X.shape[0]) 
-            X_shuffled = X[permutation] # shuffling test images from the dataset
+            permutation = np.random.permutation(X.shape[0])
+            X_shuffled = X[permutation]
             y_shuffled = y[permutation]
             
-            # 1. Mini batch Stochastic gradient descent (fast)
             for i in range(0, X.shape[0], batch_size):
                 X_batch = X_shuffled[i:i+batch_size]
                 y_batch = y_shuffled[i:i+batch_size]
@@ -187,19 +187,22 @@ class miniModel():
                 cache = self.forward_propagation(X_batch, params)
                 grads = self.backward_propagation(X_batch, y_batch, params, cache)
                 params = self.update_parameters(params, grads, learning_rate)
-            
-            # 2. Stochastic gradient descent (slow, more accurate)
-            # cache = self.forward_propagation(X_shuffled, params)
-            # grads = self.backward_propagation(X_shuffled, y_shuffled, params, cache)
-            # params = self.update_parameters(params, grads, learning_rate)
+                
+                # Store current parameters and loss
+                params_history.append({
+                    'W1': params['W1'].copy(),
+                    'W2': params['W2'].copy(),
+                    'b1': params['b1'].copy(),
+                    'b2': params['b2'].copy()
+                })
             
             cache = self.forward_propagation(X, params)
             loss = self.compute_loss(y, cache["a2"])
+            
             predictions = np.argmax(cache["a2"], axis=1)
             accuracy = np.mean(predictions == np.argmax(y, axis=1))
-
             loss_accuracy_history.append([loss, accuracy])
-
+            
             print(f"Epoch {epoch+1}/{epochs} | Loss: {loss:.4f} | Accuracy: {accuracy*100:.2f}%")
         
         self.show_loss_accuracy_graph(loss_accuracy_history, epochs)
