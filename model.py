@@ -3,6 +3,7 @@ import numpy as np
 import struct
 from array import array
 from os.path  import join
+import matplotlib.pyplot as plt
 
 class MnistDataloader(object):
     def __init__(self, training_images_filepath,training_labels_filepath,
@@ -147,7 +148,22 @@ class miniModel():
         params["b2"] -= learning_rate * grads["db2"]
         return params
 
+    def show_loss_accuracy_graph(self, loss_accuracy_history, epochs):
+        epochs_history = list(range(1, epochs+1))
+
+        loss = [l[0] for l in loss_accuracy_history]
+        accuracy = [a[1] for a in loss_accuracy_history]
+
+        plt.plot(epochs_history, loss, label = "Loss")
+        plt.plot(epochs_history, accuracy, label = "Accuracy")
+        plt.legend()
+
+        plt.tight_layout()
+        plt.show()
+
+
     def train(self, X, y, params, epochs=10, batch_size=64, learning_rate=0.01):
+        loss_accuracy_history = []
         for epoch in range(epochs):
             permutation = np.random.permutation(X.shape[0]) 
             X_shuffled = X[permutation] # shuffling test images from the dataset
@@ -171,7 +187,12 @@ class miniModel():
             loss = self.compute_loss(y, cache["a2"])
             predictions = np.argmax(cache["a2"], axis=1)
             accuracy = np.mean(predictions == np.argmax(y, axis=1))
+
+            loss_accuracy_history.append([loss, accuracy])
+
             print(f"Epoch {epoch+1}/{epochs} | Loss: {loss:.4f} | Accuracy: {accuracy*100:.2f}%")
+        
+        self.show_loss_accuracy_graph(loss_accuracy_history, epochs)
         
         return params
 
@@ -181,7 +202,6 @@ class miniModel():
         accuracy = np.mean(predictions == np.argmax(y_test, axis=1))
         print(f"Test Accuracy: {accuracy * 100:.2f}%")
     
-
 
 input_path = 'data'
 training_images_filepath = join(input_path, 'train-images-idx3-ubyte/train-images-idx3-ubyte')
