@@ -154,12 +154,22 @@ class miniModel():
         loss = [l[0] for l in loss_accuracy_history]
         accuracy = [a[1] for a in loss_accuracy_history]
 
-        plt.plot(epochs_history, loss, label = "Loss")
-        plt.plot(epochs_history, accuracy, label = "Accuracy")
-        plt.legend()
+        figure, axis = plt.subplots(2)
+
+        axis[0].plot(epochs_history, loss, 'tab:green')
+        axis[0].set_title(f"Loss over {epochs} epochs")
+        axis[0].set_xticks(np.arange(1, 21, 1))
+        axis[0].grid(True)
+        axis[0].set(xlabel = "Epochs", ylabel = "Loss")
+
+        axis[1].plot(epochs_history, accuracy)
+        axis[1].set_title(f"Accuracy over {epochs} epochs")
+        axis[1].set_xticks(np.arange(1, 21, 1))
+        axis[1].grid(True)
+        axis[1].set(xlabel = "Epochs", ylabel = "Accuracy")
 
         plt.tight_layout()
-        plt.show()
+        plt.savefig('charts/loss_accuracy.png')
 
 
     def train(self, X, y, params, epochs=10, batch_size=64, learning_rate=0.01):
@@ -203,16 +213,19 @@ class miniModel():
         print(f"Test Accuracy: {accuracy * 100:.2f}%")
     
 
+# Paths to the downloaded data
 input_path = 'data'
 training_images_filepath = join(input_path, 'train-images-idx3-ubyte/train-images-idx3-ubyte')
 training_labels_filepath = join(input_path, 'train-labels-idx1-ubyte/train-labels-idx1-ubyte')
 test_images_filepath = join(input_path, 't10k-images-idx3-ubyte/t10k-images-idx3-ubyte')
 test_labels_filepath = join(input_path, 't10k-labels-idx1-ubyte/t10k-labels-idx1-ubyte')
 
+# Loading and processing data
 mnist_dataloader = MnistDataloader(training_images_filepath, training_labels_filepath, test_images_filepath, test_labels_filepath)
 (x_train, y_train), (x_test, y_test) = mnist_dataloader.load_data()
 x_train, y_train_onehot, x_test, y_test_onehot = mnist_dataloader.preprocess_data(x_train, y_train, x_test, y_test)
 
+# Running the model
 model = miniModel()
 params = model.initialize_parameters(784, 128, 10)
 params = model.train(x_train, y_train_onehot, params, epochs=20, batch_size=64, learning_rate=0.01)
