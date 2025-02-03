@@ -162,7 +162,7 @@ Where:
 #### Matrix Dimensions and Transposition
 
 <p align="center">
-  <img src="https://github.com/KrysztofN/Neural_Network_From_Scratch/blob/main/img/mmult.png" alt="Num" width="350" height="300">
+  <img src="https://github.com/KrysztofN/Neural_Network_From_Scratch/blob/main/img/mmult.png" alt="Num" width="400" height="300">
 </p>
 <p align="center">
 <i>Matrices multiplication recap</i>
@@ -212,7 +212,7 @@ The loss function serves as a performance metric measuring how well our neural n
 This project uses the Cross-Entropy loss function:
 
 <p align="center">
-  <img src="https://github.com/KrysztofN/Neural_Network_From_Scratch/blob/main/img/cross_entropy.png" alt="Num" width="400" height="150">
+  <img src="https://github.com/KrysztofN/Neural_Network_From_Scratch/blob/main/img/cross_entropy.png" alt="Num" width="600" height="150">
 </p>
 <p align="center">
 <i>Cross-Entropy formula</i>
