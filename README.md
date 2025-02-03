@@ -57,7 +57,7 @@ The implementation uses a simple yet effective design comprising:
 - Output layer
 
 <p align="center">
-  <img src="https://github.com/KrysztofN/Neural_Network_From_Scratch/blob/main/img/network.png" alt="Num" width="300" height="250">
+  <img src="https://github.com/KrysztofN/Neural_Network_From_Scratch/blob/main/img/network.png" alt="Num" width="400" height="350">
 </p>
 <p align="center">
 <i>Neural network design</i>
