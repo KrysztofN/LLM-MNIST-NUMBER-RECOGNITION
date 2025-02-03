@@ -300,7 +300,7 @@ The final evaluation:
 
 
 <p align="center">
-  <img src="https://github.com/KrysztofN/Neural_Network_From_Scratch/blob/main/charts/confusion_matrix.png" alt="Num" width="800" height="800">
+  <img src="https://github.com/KrysztofN/Neural_Network_From_Scratch/blob/main/charts/confusion_matrix.png" alt="Num" width="800" height="700">
 </p>
 <p align="center">
 <i>10 class consufion matrix showing prediction accuracy</i>
