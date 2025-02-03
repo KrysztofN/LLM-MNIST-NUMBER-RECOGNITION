@@ -120,7 +120,7 @@ This implementation focuses on two specific functions:
 - Works by 'zeroing' negative values
 
 <p align="center">
-  <img src="https://github.com/KrysztofN/Neural_Network_From_Scratch/blob/main/img/relu.png" alt="Num" width="600" height="150">
+  <img src="https://github.com/KrysztofN/Neural_Network_From_Scratch/blob/main/img/relu.png" alt="Num" width="800" height="150">
 </p>
 <p align="center">
 <i>ReLU function</i>
@@ -134,8 +134,8 @@ This implementation focuses on two specific functions:
 - Normalizes network output to a probability distribution over predicted output classes
 
 <p align="center">
-  <img src="https://github.com/KrysztofN/Neural_Network_From_Scratch/blob/main/img/softmax.png" alt="Num" width="300" height="150">
-  <img src="https://github.com/KrysztofN/Neural_Network_From_Scratch/blob/main/img/softmax_stable.png" alt="Num" width="300" height="150">
+  <img src="https://github.com/KrysztofN/Neural_Network_From_Scratch/blob/main/img/softmax.png" alt="Num" width="400" height="150">
+  <img src="https://github.com/KrysztofN/Neural_Network_From_Scratch/blob/main/img/softmax_stable.png" alt="Num" width="400" height="150">
 </p>
 <p align="center">
 <i>Left: Standard Softmax, Right: Numerically stable softmax</i>
