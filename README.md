@@ -18,7 +18,9 @@ Starting with Kaggle's MNIST scripts, I verified the dataset integrity. The data
 
 This represents a standard ratio to prevent overfitting. Each 28x28 grayscale image is stored as a 3D array (samples × width × height), though most fully connected layers expect 2D input (samples × flattened_features).
 
-![num](https://github.com/KrysztofN/Neural_Network_From_Scratch/blob/main/img/num.png)
+<p align="center">
+  <img src="https://github.com/KrysztofN/Neural_Network_From_Scratch/blob/main/img/num.png" alt="Num" width="250" height="250">
+</p>
 
 *Train image representing number 2*
 
