@@ -276,10 +276,10 @@ The training process involves:
 - Regular evaluation of model performance
 
 <p align="center">
-  <img src="https://github.com/KrysztofN/Neural_Network_From_Scratch/blob/main/img/training.png" alt="Num" width="500" height="700">
+  <img src="https://github.com/KrysztofN/Neural_Network_From_Scratch/blob/main/img/training.png" alt="Num" width="500" height="600">
 </p>
 <p align="center">
-<i>Training step visualization</i>
+<i>Training step</i>
 </p>
 
 
