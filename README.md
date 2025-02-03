@@ -8,8 +8,6 @@ The project focuses on developing a neural network trained and tested on the MNI
 
 [MNIST Dataset on Kaggle](https://www.kaggle.com/datasets/hojjatk/mnist-dataset)
 
-**Author:** Krzysztof Nowak
-
 ## Part One - Dataset Preparation
 
 ### 1. Dataset Setup
@@ -20,7 +18,7 @@ Starting with Kaggle's MNIST scripts, I verified the dataset integrity. The data
 
 This represents a standard ratio to prevent overfitting. Each 28x28 grayscale image is stored as a 3D array (samples × width × height), though most fully connected layers expect 2D input (samples × flattened_features).
 
-<img src="/api/placeholder/400/400" alt="Train image representing number 2">
+![num](https://github.com/KrysztofN/Neural_Network_From_Scratch/blob/main/img/num.png)
 
 *Train image representing number 2*
 
