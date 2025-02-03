@@ -276,7 +276,7 @@ The training process involves:
 - Regular evaluation of model performance
 
 <p align="center">
-  <img src="https://github.com/KrysztofN/Neural_Network_From_Scratch/blob/main/img/training.png" alt="Num" width="250" height="300">
+  <img src="https://github.com/KrysztofN/Neural_Network_From_Scratch/blob/main/img/training.png" alt="Num" width="500" height="700">
 </p>
 <p align="center">
 <i>Training step visualization</i>
@@ -292,17 +292,7 @@ The final evaluation:
 - Computes accuracy against true labels
 
 <p align="center">
-  <img src="https://github.com/KrysztofN/Neural_Network_From_Scratch/blob/main/img/training.png" alt="Num" width="250" height="300">
-</p>
-<p align="center">
-<i>Training step visualization</i>
-</p>
-
-
-Performance Visualization:
-
-<p align="center">
-  <img src="https://github.com/KrysztofN/Neural_Network_From_Scratch/blob/main/charts/loss_accuracy.png" alt="Num" width="300" height="250">
+  <img src="https://github.com/KrysztofN/Neural_Network_From_Scratch/blob/main/charts/loss_accuracy.png" alt="Num" width="800" height="700">
 </p>
 <p align="center">
 <i>Accuracy - Loss visualization over 20 epochs</i>
@@ -310,7 +300,7 @@ Performance Visualization:
 
 
 <p align="center">
-  <img src="https://github.com/KrysztofN/Neural_Network_From_Scratch/blob/main/charts/confusion_matrix.png" alt="Num" width="300" height="300">
+  <img src="https://github.com/KrysztofN/Neural_Network_From_Scratch/blob/main/charts/confusion_matrix.png" alt="Num" width="800" height="800">
 </p>
 <p align="center">
 <i>10 class consufion matrix showing prediction accuracy</i>
