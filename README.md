@@ -19,7 +19,7 @@ Starting with Kaggle's MNIST scripts, I verified the dataset integrity. The data
 This represents a standard ratio to prevent overfitting. Each 28x28 grayscale image is stored as a 3D array (samples × width × height), though most fully connected layers expect 2D input (samples × flattened_features).
 <br><br>
 <p align="center">
-  <img src="https://github.com/KrysztofN/Neural_Network_From_Scratch/blob/main/img/num.png" alt="Num" width="300" height="250">
+  <img src="https://github.com/KrysztofN/Neural_Network_From_Scratch/blob/main/img/num.png" alt="Num" width="250" height="250">
 </p>
 <p align="center">
 <i>Train image representing number 2</i>
@@ -57,7 +57,7 @@ The implementation uses a simple yet effective design comprising:
 - Output layer
 
 <p align="center">
-  <img src="https://github.com/KrysztofN/Neural_Network_From_Scratch/blob/main/img/network.png" alt="Num" width="250" height="250">
+  <img src="https://github.com/KrysztofN/Neural_Network_From_Scratch/blob/main/img/network.png" alt="Num" width="300" height="250">
 </p>
 <p align="center">
 <i>Neural network design</i>
