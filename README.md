@@ -46,7 +46,7 @@ After this step:
 - y_train becomes (10000, 10) vector
 
 This normalization ensures easy comparison between the neural network's output (10 values in a vector) and the hot encoded y label vector.
-<br><br>
+<br><br><br>
 ## Part Two - Neural Network
 
 ### 1. Neural Network Design
@@ -56,9 +56,12 @@ The implementation uses a simple yet effective design comprising:
 - One hidden layer (128 neurons)
 - Output layer
 
-<img src="/api/placeholder/400/300" alt="Neural network design">
-
-*Neural network design*
+<p align="center">
+  <img src="https://github.com/KrysztofN/Neural_Network_From_Scratch/blob/main/img/network.png" alt="Num" width="250" height="250">
+</p>
+<p align="center">
+<i>Neural network design</i>
+</p>
 
 ### 2. Weights and Bias Initialization
 
@@ -76,7 +79,12 @@ This implementation uses He initialization, though others were tested for perfor
 
 The He initialization formula:
 
-<img src="/api/placeholder/300/150" alt="He initialization formula">
+<p align="center">
+  <img src="https://github.com/KrysztofN/Neural_Network_From_Scratch/blob/main/img/heinit.png" alt="Num" width="250" height="150">
+</p>
+<p align="center">
+<i>He initialization formula</i>
+</p>
 
 We approximate weights matrix with gaussian distribution of:
 - Mean value: 0
@@ -111,18 +119,28 @@ This implementation focuses on two specific functions:
 - Best for hidden layers
 - Works by 'zeroing' negative values
 
-<img src="/api/placeholder/500/100" alt="ReLU function">
+<p align="center">
+  <img src="https://github.com/KrysztofN/Neural_Network_From_Scratch/blob/main/img/relu.png" alt="Num" width="400" height="150">
+</p>
+<p align="center">
+<i>ReLU function</i>
+</p>
 
-*ReLU function*
+
 
 #### Softmax
 - Converts a vector of n real numbers into a probability distribution
 - Commonly used as the last activation function
 - Normalizes network output to a probability distribution over predicted output classes
 
-<img src="/api/placeholder/400/100" alt="Softmax formulas">
+<p align="center">
+  <img src="https://github.com/KrysztofN/Neural_Network_From_Scratch/blob/main/img/softmax.png" alt="Num" width="200" height="150">
+  <img src="https://github.com/KrysztofN/Neural_Network_From_Scratch/blob/main/img/softmax_stable.png" alt="Num" width="200" height="150">
+</p>
+<p align="center">
+<i>Left: Standard Softmax, Right: Numerically stable softmax</i>
+</p>
 
-*Left: Standard Softmax, Right: Numerically stable softmax*
 
 The numerically stable softmax ensures all exponentiated values will be between 0 and 1, preventing overflow errors.
 
@@ -143,9 +161,13 @@ Where:
 
 #### Matrix Dimensions and Transposition
 
-<img src="/api/placeholder/400/300" alt="Matrices multiplication recap">
+<p align="center">
+  <img src="https://github.com/KrysztofN/Neural_Network_From_Scratch/blob/main/img/mmult.png" alt="Num" width="350" height="300">
+</p>
+<p align="center">
+<i>Matrices multiplication recap</i>
+</p>
 
-*Matrices multiplication recap*
 
 For valid matrix multiplication:
 - If matrix A is (m × n)
@@ -153,9 +175,6 @@ For valid matrix multiplication:
 - Then A × B results in matrix size (m × p)
 - Inner dimensions (n) must match
 
-<img src="/api/placeholder/400/300" alt="2 forward passes structure">
-
-*2 forward passes structure*
 
 **First Forward Pass:**
 ```
@@ -192,7 +211,12 @@ The loss function serves as a performance metric measuring how well our neural n
 
 This project uses the Cross-Entropy loss function:
 
-<img src="/api/placeholder/400/100" alt="Cross-entropy function formula">
+<p align="center">
+  <img src="https://github.com/KrysztofN/Neural_Network_From_Scratch/blob/main/img/cross_entropy.png" alt="Num" width="400" height="150">
+</p>
+<p align="center">
+<i>Cross-Entropy formula</i>
+</p>
 
 Where:
 - N: number of training examples
@@ -251,9 +275,13 @@ The training process involves:
 - Mini-batch Stochastic Gradient Descent
 - Regular evaluation of model performance
 
-<img src="/api/placeholder/400/400" alt="Training step">
+<p align="center">
+  <img src="https://github.com/KrysztofN/Neural_Network_From_Scratch/blob/main/img/training.png" alt="Num" width="250" height="300">
+</p>
+<p align="center">
+<i>Training step visualization</i>
+</p>
 
-*Training step visualization*
 
 ### 9. Evaluation
 
@@ -263,14 +291,28 @@ The final evaluation:
 - Uses argmax function for class prediction
 - Computes accuracy against true labels
 
-<img src="/api/placeholder/200/50" alt="Model accuracy">
+<p align="center">
+  <img src="https://github.com/KrysztofN/Neural_Network_From_Scratch/blob/main/img/training.png" alt="Num" width="250" height="300">
+</p>
+<p align="center">
+<i>Training step visualization</i>
+</p>
+
 
 Performance Visualization:
 
-<img src="/api/placeholder/500/400" alt="Loss and accuracy over 20 epochs">
+<p align="center">
+  <img src="https://github.com/KrysztofN/Neural_Network_From_Scratch/blob/main/charts/loss_accuracy.png" alt="Num" width="300" height="250">
+</p>
+<p align="center">
+<i>Accuracy - Loss visualization over 20 epochs</i>
+</p>
 
-*Loss and accuracy over 20 epochs*
 
-<img src="/api/placeholder/500/500" alt="10 class confusion matrix">
+<p align="center">
+  <img src="https://github.com/KrysztofN/Neural_Network_From_Scratch/blob/main/charts/confusion_matrix.png" alt="Num" width="300" height="300">
+</p>
+<p align="center">
+<i>10 class consufion matrix showing prediction accuracy</i>
+</p>
 
-*10 class confusion matrix showing prediction accuracy*
