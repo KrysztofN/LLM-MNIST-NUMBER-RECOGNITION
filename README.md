@@ -22,7 +22,7 @@ This represents a standard ratio to prevent overfitting. Each 28x28 grayscale im
   <img src="https://github.com/KrysztofN/Neural_Network_From_Scratch/blob/main/img/num.png" alt="Num" width="250" height="250">
 </p>
 <p align="center">
-*Train image representing number 2*
+<i>Train image representing number 2</i>
 </p>
 
 ### 2. Normalization
