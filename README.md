@@ -46,7 +46,7 @@ After this step:
 - y_train becomes (10000, 10) vector
 
 This normalization ensures easy comparison between the neural network's output (10 values in a vector) and the hot encoded y label vector.
-
+<br>
 ## Part Two - Neural Network
 
 ### 1. Neural Network Design
